@@ -1,0 +1,12 @@
+# MODULE.bazel
+"""
+Modern Bazel module definition for Python projects.
+"""
+module(name = "bazel_python_project", version = "1.0.0")
+
+# Declare a dependency on the official Bazel Python rules
+bazel_dep(name = "rules_python", version = "0.29.0")
+
+# Configure the Python toolchain for a specific version
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(python_version = "3.11")
