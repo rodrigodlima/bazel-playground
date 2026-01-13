@@ -1,0 +1,13 @@
+# BUILD.bazel
+"""
+Build instructions for the root directory.
+"""
+# Load the py_binary rule from the rules_python library
+load("@rules_python//python:defs.bzl", "py_binary")
+
+# Define a Python executable target
+py_binary(
+    name = "media_calc",
+    srcs = ["apps/media_calc/__main__.py"],
+    main = "apps/media_calc/__main__.py", # Specifies the entry point file
+)
