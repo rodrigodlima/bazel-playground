@@ -36,15 +36,6 @@ def create_item(table_name: str, item: dict) -> dict:
 
 
 def get_item(table_name: str, key: dict) -> dict:
-    """Get an item from a DynamoDB table.
-
-    Args:
-        table_name: Name of the DynamoDB table
-        key: Dictionary containing the partition key (and sort key if applicable)
-
-    Returns:
-        The item if found, None otherwise
-    """
     dynamodb = get_dynamodb_resource()
     table = dynamodb.Table(table_name)
 
